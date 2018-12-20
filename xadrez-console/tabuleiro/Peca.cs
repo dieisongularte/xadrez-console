@@ -18,6 +18,5 @@ namespace tabuleiro
             Posicao = null;
             QteMovimentos = 0;
         }
-
     }
 }
