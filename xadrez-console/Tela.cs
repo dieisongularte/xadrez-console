@@ -129,5 +129,38 @@ namespace xadrez_console
             int linha = int.Parse(s[1] + "");
             return new PosicaoXadrez(coluna, linha);
         }
+
+        public static Peca LerPecaPromocao(Tabuleiro tab, Cor cor)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Peão promovido! escolha uma nova peça:");
+            Console.WriteLine("D - Dama");
+            Console.WriteLine("C - Cavalo");
+            Console.WriteLine("B - Bispo");
+            Console.WriteLine("T - Torre");
+            Console.Write("Digite a inicial da nova peça: ");
+            char ch = char.Parse(Console.ReadLine());
+            Peca p = null;
+
+            switch (ch)
+            {
+                case 'D':
+                    p = new Dama(tab, cor);
+                    break;
+                case 'C':
+                    p = new Cavalo(tab, cor);
+                    break;
+                case 'B':
+                    p = new Bispo(tab, cor);
+                    break;
+                case 'T':
+                    p = new Torre(tab, cor);
+                    break;
+                default:
+                    Console.WriteLine("Valor inválido!!");
+                    break;
+            }
+            return p;
+        }
     }
 }

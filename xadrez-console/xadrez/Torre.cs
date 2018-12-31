@@ -36,7 +36,7 @@ namespace xadrez
 
 
             //abaixo
-            pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna);
+            pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna); 
             while (Tab.PosicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.Linha, pos.Coluna] = true;
@@ -48,7 +48,7 @@ namespace xadrez
             }
 
             //direita
-            pos.DefinirValores(Posicao.Linha, Posicao.Coluna + 1);
+            pos.DefinirValores(Posicao.Linha, Posicao.Coluna + 1); 
             while (Tab.PosicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.Linha, pos.Coluna] = true;
@@ -60,7 +60,7 @@ namespace xadrez
             }
 
             //Esquerda
-            pos.DefinirValores(Posicao.Linha, Posicao.Coluna - 1);
+            pos.DefinirValores(Posicao.Linha, Posicao.Coluna - 1); //7, 0
             while (Tab.PosicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.Linha, pos.Coluna] = true;

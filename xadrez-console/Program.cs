@@ -8,9 +8,6 @@ namespace xadrez_console
     {
         static void Main(string[] args)
         {
-            /*PosicaoXadrez pos = new PosicaoXadrez('c', 7);
-            Console.WriteLine(pos);
-            Console.WriteLine(pos.ToPosicao());*/
             try
             {
                 PartidaDeXadrez partida = new PartidaDeXadrez();
@@ -38,6 +35,16 @@ namespace xadrez_console
                         partida.ValidarPosicaoDestino(origem, destino);
 
                         partida.RealizaJogada(origem, destino);
+                    }
+                    catch (FormatException f)
+                    {
+                        Console.WriteLine(f.Message);
+                        Console.ReadLine();
+                    }
+                    catch (IndexOutOfRangeException i)
+                    {
+                        Console.WriteLine(i.Message);
+                        Console.ReadLine();
                     }
                     catch (TabuleiroException e)
                     {
